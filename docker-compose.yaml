@@ -1,28 +1,30 @@
-version: '1'
+version: '2.2'
 services:
   app:
-    container_name: contenedor_php
-    image: juanantpineda/
+    container_name: contenedor_python
+    image: juanantpineda/publicaciones:v1
     restart: always
     environment:
-      DB_HOST: servidor_mysql
-      DB_USER: user1
-      DB_PASS: asdasd
-      DB_NAME: usuarios
+      DB_NAME: django
+      DB_USER: django
+      DB_PASSWORD: django
+      DB_HOST: servidor_mysql1
+      DJ_USER: django
+      DJ_PASSWORD: django
     ports:
-      - 8080:80
+      - 8086:80
     depends_on:
       - db
   db:
-    container_name: servidor_mysql
+    container_name: servidor_mysql1
     image: mariadb
     restart: always
     environment:
-      MYSQL_DATABASE: usuarios
-      MYSQL_USER: user1
-      MYSQL_PASSWORD: asdasd
+      MYSQL_DATABASE: django
+      MYSQL_USER: django
+      MYSQL_PASSWORD: django
       MYSQL_ROOT_PASSWORD: asdasd
     volumes:
-      - mariadb_data:/var/lib/mysql
+      - mariadb_data1:/var/lib/mysql
 volumes:
-    mariadb_data:
+    mariadb_data1:
