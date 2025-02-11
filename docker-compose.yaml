@@ -12,6 +12,7 @@ services:
       DJ_USER: django
       DJ_PASSWORD: django
       ALLOWED_HOSTS: 172.22.200.81
+      DJ_EMAIL: a@a.com
     ports:
       - 8086:3000
     depends_on:
