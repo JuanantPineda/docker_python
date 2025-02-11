@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM debian:12
+FROM debian:latest
 RUN apt-get update && apt-get install -y python3-pip pkg-config libmariadbclient-dev && apt-get clean && rm -rf /var/lib/apt/lists/* 
 WORKDIR /usr/share/app
 COPY app/django_publicaciones .
