@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM python3:3.12.1-bookworm
+FROM python:3.12.1-bookworm
 WORKDIR /usr/share/app
 COPY app/django_publicaciones .
 ENV DB_NAME = django
