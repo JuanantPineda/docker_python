@@ -13,6 +13,7 @@ services:
       DJ_PASSWORD: ${DJ_PASSWORD}
       ALLOWED_HOSTS: ${ALLOWED_HOSTS}
       DJ_EMAIL: ${DJ_EMAIL}
+      URL: ${URL}
     ports:
       - ${PORT}:3000
     depends_on:

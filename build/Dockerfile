@@ -10,6 +10,7 @@ ENV DJ_USER = django
 ENV DJ_PASSWORD = django
 ENV ALLOWED_HOSTS = localhost
 ENV DJ_EMAIL = a@a.com
+ENV URL = http://localhost
 RUN pip install --upgrade --no-cache-dir --break-system-packages pip && pip install --no-cache-dir --break-system-packages -r requirements.txt && pip install --no-cache-dir --break-system-packages mysqlclient
 COPY script.sh /usr/local/bin/script.sh
 RUN chmod +x /usr/local/bin/script.sh
