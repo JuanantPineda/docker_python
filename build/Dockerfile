@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1
 FROM debian:12
 RUN apt-get update && apt-get install -y python3-pip  && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN pip install mysqlclient
 WORKDIR /usr/share/app
 COPY app/django_publicaciones .
 ENV DB_NAME = django
