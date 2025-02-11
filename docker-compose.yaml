@@ -12,7 +12,7 @@ services:
       DJ_USER: django
       DJ_PASSWORD: django
     ports:
-      - 8086:80
+      - 8086:3000
     depends_on:
       - db
   db:
