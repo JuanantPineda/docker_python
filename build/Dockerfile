@@ -8,7 +8,7 @@ ENV DB_PASSWORD = django
 ENV DB_HOST = localhost
 ENV DJ_USER = django
 ENV DJ_PASSWORD = django
-RUN pip3 install --no-cache-dir --break-system-packages -r requirements.txt && pip3 install --no-cache-dir --break-system-packages mysqlclient
+RUN pip install --upgrade --no-cache-dir --break-system-packages pip && pip3 install --no-cache-dir --break-system-packages -r requirements.txt && pip3 install --no-cache-dir --break-system-packages mysqlclient
 COPY script.sh /usr/local/bin/script.sh
 RUN chmod +x /usr/local/bin/script.sh
 EXPOSE 3000
