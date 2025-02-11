@@ -2,19 +2,19 @@ version: '2.2'
 services:
   app:
     container_name: contenedor_python
-    image: juanantpineda/publicaciones:v1
+    image: juanantpineda/publicaciones:${VERSION}
     restart: always
     environment:
-      DB_NAME: django
-      DB_USER: django
-      DB_PASSWORD: django
-      DB_HOST: servidor_mysql1
-      DJ_USER: django
-      DJ_PASSWORD: django
-      ALLOWED_HOSTS: 172.22.200.81
-      DJ_EMAIL: a@a.com
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: ${DB_HOST}
+      DJ_USER: ${DJ_USER}
+      DJ_PASSWORD: ${DJ_PASSWORD}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS}
+      DJ_EMAIL: ${DJ_EMAIL}
     ports:
-      - 8086:3000
+      - ${PORT}:3000
     depends_on:
       - db
   db:
@@ -22,10 +22,10 @@ services:
     image: mariadb
     restart: always
     environment:
-      MYSQL_DATABASE: django
-      MYSQL_USER: django
-      MYSQL_PASSWORD: django
-      MYSQL_ROOT_PASSWORD: asdasd
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
       - mariadb_data1:/var/lib/mysql
 volumes:
